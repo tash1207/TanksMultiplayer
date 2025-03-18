@@ -259,6 +259,7 @@ GameObject:
   - component: {fileID: 7015243810650002083}
   - component: {fileID: 7866909684269027294}
   - component: {fileID: 8483330660735498249}
+  - component: {fileID: 7959313803576934007}
   - component: {fileID: 928392551683977947}
   m_Layer: 0
   m_Name: Player
@@ -296,7 +297,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 1688746786
+  GlobalObjectIdHash: 3982870874
   InScenePlacedSourceGlobalObjectIdHash: 0
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
@@ -363,6 +364,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &7959313803576934007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5938133984256156871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f4faf4a7e27b8448895c43d4258ddb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputReader: {fileID: 11400000, guid: 8a831461e829db24194b1be7a9811da8, type: 2}
+  turretTransform: {fileID: 8535067915226459745}
 --- !u!114 &928392551683977947
 MonoBehaviour:
   m_ObjectHideFlags: 0
