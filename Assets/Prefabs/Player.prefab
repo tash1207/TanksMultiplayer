@@ -247,6 +247,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &5086664267051570189
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5266106615654640250}
+  m_Layer: 0
+  m_Name: ProjectileSpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5266106615654640250
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5086664267051570189}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4630834605811792684}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5938133984256156871
 GameObject:
   m_ObjectHideFlags: 0
@@ -261,6 +292,7 @@ GameObject:
   - component: {fileID: 8483330660735498249}
   - component: {fileID: 7959313803576934007}
   - component: {fileID: 928392551683977947}
+  - component: {fileID: 8039361320073012110}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -395,6 +427,23 @@ MonoBehaviour:
   rb2d: {fileID: 8483330660735498249}
   movementSpeed: 6
   turningRate: 180
+--- !u!114 &8039361320073012110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5938133984256156871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3b4c93fde06a534492531bddf947692, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputReader: {fileID: 11400000, guid: 8a831461e829db24194b1be7a9811da8, type: 2}
+  projectileSpawnPoint: {fileID: 5266106615654640250}
+  clientProjectilePrefab: {fileID: 3748372643199827176, guid: 8e6e2f98f03a3334aa4b90ddb52a741f, type: 3}
+  serverProjectilePrefab: {fileID: 5303723491101011182, guid: 5eba50dc219523040859d877e6aa1c3d, type: 3}
+  projectileSpeed: 20
 --- !u!1 &6257348951011873521
 GameObject:
   m_ObjectHideFlags: 0
@@ -424,7 +473,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0.43, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 5266106615654640250}
   m_Father: {fileID: 8535067915226459745}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4876027080084040689
