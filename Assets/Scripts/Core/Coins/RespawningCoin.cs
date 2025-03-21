@@ -11,7 +11,7 @@ public class RespawningCoin : Coin
             Show(false);
             return 0;
         }
-        
+
         if (alreadyCollected)
         {
             return 0;
