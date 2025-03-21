@@ -99,5 +99,10 @@ public class ProjectileLauncher : NetworkBehaviour
         {
             rb.velocity = rb.transform.up * projectileSpeed;
         }
+
+        if (projectileInstance.TryGetComponent<DealDamageOnContact>(out DealDamageOnContact dealDamage))
+        {
+            dealDamage.SetOwner(OwnerClientId);
+        }
     }
 }
