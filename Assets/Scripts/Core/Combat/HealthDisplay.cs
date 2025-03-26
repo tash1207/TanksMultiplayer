@@ -14,6 +14,8 @@ public class HealthDisplay : NetworkBehaviour
     {
         if (!IsClient) { return; }
 
+        if (health == null || health.CurrentHealth == null) { return; }
+
         health.CurrentHealth.OnValueChanged += HandleHealthChanged;
         HandleHealthChanged(0, health.CurrentHealth.Value);
     }
@@ -21,6 +23,8 @@ public class HealthDisplay : NetworkBehaviour
     public override void OnNetworkDespawn()
     {
         if (!IsClient) { return; }
+
+        if (health == null || health.CurrentHealth == null) { return; }
 
         health.CurrentHealth.OnValueChanged -= HandleHealthChanged;
     }
