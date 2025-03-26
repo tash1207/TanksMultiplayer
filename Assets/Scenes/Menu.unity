@@ -440,6 +440,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46a382cbcbba76943b3d43b7d38a1aaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  joinCodeField: {fileID: 493188046}
 --- !u!4 &359485799 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8086978899735084858, guid: 4a124d80aa9f775479cbbf7110e6c6eb, type: 3}
@@ -973,7 +974,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 651195115}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 330648245}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: StartClient
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &651195115
 MonoBehaviour:
   m_ObjectHideFlags: 0

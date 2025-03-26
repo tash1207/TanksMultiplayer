@@ -42,14 +42,7 @@ public class HostGameManager
         }
 
         UnityTransport transport = NetworkManager.Singleton.GetComponent<UnityTransport>();
-        RelayServerData relayServerData = new RelayServerData(
-            allocation.RelayServer.IpV4,
-            (ushort)allocation.RelayServer.Port,
-            allocation.AllocationIdBytes,
-            allocation.ConnectionData,
-            allocation.ConnectionData,
-            allocation.Key,
-            /* isSecure= */ true);
+        RelayServerData relayServerData = AllocationUtils.ToRelayServerData(allocation, "dtls");
         transport.SetRelayServerData(relayServerData);
 
         NetworkManager.Singleton.StartHost();
