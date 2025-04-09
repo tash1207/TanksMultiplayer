@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 using Unity.Netcode;
 using Unity.Netcode.Transports.UTP;
 using Unity.Networking.Transport.Relay;
+using Unity.Services.Lobbies;
+using Unity.Services.Lobbies.Models;
 using Unity.Services.Relay;
 using Unity.Services.Relay.Models;
 using UnityEngine;
@@ -14,6 +16,7 @@ public class HostGameManager
 {
     Allocation allocation;
     string joinCode;
+    string lobbyId;
 
     const int MaxConnections = 10;
     const string GameSceneName = "Game";
@@ -45,7 +48,39 @@ public class HostGameManager
         RelayServerData relayServerData = AllocationUtils.ToRelayServerData(allocation, "dtls");
         transport.SetRelayServerData(relayServerData);
 
+        try
+        {
+            CreateLobbyOptions lobbyOptions = new CreateLobbyOptions();
+            lobbyOptions.IsPrivate = false;
+            lobbyOptions.Data = new Dictionary<string, DataObject>()
+            {
+                {
+                    "JoinCode", new DataObject(DataObject.VisibilityOptions.Member, joinCode)
+                }
+            };
+            Lobby lobby = await LobbyService.Instance.CreateLobbyAsync(
+                "My Lobby", MaxConnections, lobbyOptions);
+            lobbyId = lobby.Id;
+
+            HostSingleton.Instance.StartCoroutine(HeartbeatLobby(15));
+        }
+        catch (LobbyServiceException ex)
+        {
+            Debug.Log(ex);
+            return;
+        }
+
         NetworkManager.Singleton.StartHost();
         NetworkManager.Singleton.SceneManager.LoadScene(GameSceneName, LoadSceneMode.Single);
+    }
+
+    IEnumerator HeartbeatLobby(float waitTimeSeconds)
+    {
+        WaitForSecondsRealtime delay = new WaitForSecondsRealtime(waitTimeSeconds);
+        while (true)
+        {
+            LobbyService.Instance.SendHeartbeatPingAsync(lobbyId);
+            yield return delay;
+        }
     }
 }
