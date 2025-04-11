@@ -14,7 +14,7 @@ using Unity.Services.Relay.Models;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class HostGameManager
+public class HostGameManager : IDisposable
 {
     Allocation allocation;
     string joinCode;
@@ -100,5 +100,26 @@ public class HostGameManager
             LobbyService.Instance.SendHeartbeatPingAsync(lobbyId);
             yield return delay;
         }
+    }
+
+    public async void Dispose()
+    {
+        HostSingleton.Instance.StopCoroutine(nameof(HeartbeatLobby));
+
+        if (!string.IsNullOrEmpty(lobbyId))
+        {
+            try
+            {
+                await LobbyService.Instance.DeleteLobbyAsync(lobbyId);
+            }
+            catch (LobbyServiceException ex)
+            {
+                Debug.Log(ex);
+            }
+
+            lobbyId = string.Empty;
+        }
+
+        networkServer?.Dispose();
     }
 }
