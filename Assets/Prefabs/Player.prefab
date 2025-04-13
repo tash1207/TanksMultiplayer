@@ -976,6 +976,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   followCamera: {fileID: 3192944296282747989}
+  <Health>k__BackingField: {fileID: -2552605889627144107}
   ownerPriority: 15
   PlayerName:
     m_InternalValue:
