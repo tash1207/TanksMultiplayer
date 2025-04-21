@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &3254874630244849898
+--- !u!1001 &1655489934565718817
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1191662899210132130, guid: 1c59254f68e52244395367c5cf7bac66, type: 3}
       propertyPath: GlobalObjectIdHash
-      value: 3863824751
+      value: 776748810
       objectReference: {fileID: 0}
     - target: {fileID: 1191662899210132130, guid: 1c59254f68e52244395367c5cf7bac66, type: 3}
       propertyPath: InScenePlacedSourceGlobalObjectIdHash
@@ -58,70 +58,40 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5447922104490363738, guid: 1c59254f68e52244395367c5cf7bac66, type: 3}
       propertyPath: m_Name
-      value: RespawningCoin
+      value: BountyCoin
       objectReference: {fileID: 0}
+    - target: {fileID: 7816281865528165022, guid: 1c59254f68e52244395367c5cf7bac66, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 7bfd0a0977e81b84a8f1d12195e5883a, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 5447922104490363738, guid: 1c59254f68e52244395367c5cf7bac66, type: 3}
-      insertIndex: 2
-      addedObject: {fileID: 1537353354424697359}
-    - targetCorrespondingSourceObject: {fileID: 5447922104490363738, guid: 1c59254f68e52244395367c5cf7bac66, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 6843650678477077608}
+      addedObject: {fileID: -828559067569480618}
   m_SourcePrefab: {fileID: 100100000, guid: 1c59254f68e52244395367c5cf7bac66, type: 3}
---- !u!212 &4707002452045372020 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 7816281865528165022, guid: 1c59254f68e52244395367c5cf7bac66, type: 3}
-  m_PrefabInstance: {fileID: 3254874630244849898}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &7399778611551097776 stripped
+--- !u!1 &6729384004562432123 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5447922104490363738, guid: 1c59254f68e52244395367c5cf7bac66, type: 3}
-  m_PrefabInstance: {fileID: 3254874630244849898}
+  m_PrefabInstance: {fileID: 1655489934565718817}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1537353354424697359
+--- !u!114 &-828559067569480618
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7399778611551097776}
+  m_GameObject: {fileID: 6729384004562432123}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e96cb6065543e43c4a752faaa1468eb1, type: 3}
+  m_Script: {fileID: 11500000, guid: e103c16dff15ee846b0cbe33a4b85587, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UseUnreliableDeltas: 0
-  SyncPositionX: 1
-  SyncPositionY: 1
-  SyncPositionZ: 0
-  SyncRotAngleX: 0
-  SyncRotAngleY: 0
-  SyncRotAngleZ: 0
-  SyncScaleX: 0
-  SyncScaleY: 0
-  SyncScaleZ: 0
-  PositionThreshold: 0.001
-  RotAngleThreshold: 0.01
-  ScaleThreshold: 0.01
-  UseQuaternionSynchronization: 0
-  UseQuaternionCompression: 0
-  UseHalfFloatPrecision: 0
-  InLocalSpace: 0
-  Interpolate: 0
-  SlerpPosition: 0
---- !u!114 &6843650678477077608
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  spriteRenderer: {fileID: 8827189009494342079}
+--- !u!212 &8827189009494342079 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 7816281865528165022, guid: 1c59254f68e52244395367c5cf7bac66, type: 3}
+  m_PrefabInstance: {fileID: 1655489934565718817}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7399778611551097776}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16f79fd8b2113f445ad3c1438b7ec9ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spriteRenderer: {fileID: 4707002452045372020}
