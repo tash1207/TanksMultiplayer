@@ -813,7 +813,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 3982870874
+  GlobalObjectIdHash: 1688746786
   InScenePlacedSourceGlobalObjectIdHash: 0
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
@@ -977,6 +977,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   followCamera: {fileID: 3192944296282747989}
   <Health>k__BackingField: {fileID: -2552605889627144107}
+  <Wallet>k__BackingField: {fileID: 5587587638241333595}
   ownerPriority: 15
   PlayerName:
     m_InternalValue:
