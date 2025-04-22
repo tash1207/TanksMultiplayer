@@ -28,14 +28,14 @@ public class CoinWallet : NetworkBehaviour
 
         coinRadius = coinPrefab.GetComponent<CircleCollider2D>().radius;
 
-        health.OnDie += (health) => HandleDie(health);
+        health.OnDie += HandleDie;
     }
 
     public override void OnNetworkDespawn()
     {
         if (!IsServer) { return; }
 
-        health.OnDie -= (health) => HandleDie(health);
+        health.OnDie -= HandleDie;
     }
 
     void OnTriggerEnter2D(Collider2D col)
